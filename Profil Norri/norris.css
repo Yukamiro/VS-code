@@ -67,7 +67,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(214, 209, 209, 0.5);
     text-align: left;
-    
+    z-index: 2; /* La carte est en avant par défaut */
 }
 
 .avatar {
@@ -80,7 +80,7 @@ body {
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(33, 33, 33, 0.3);
     transition: transform 0.3s;
-    opacity: 50%;
+    
 }
 
 .avatar img:hover {
@@ -100,15 +100,12 @@ body {
     transition: transform 0.5s;
 }
 
-p { text-align: center;
+p {
+    text-align: center;
     font-size: 18px;
     margin-bottom: 15px;
     line-height: 1.6;
     color: whitesmoke;
-}
-
-.age {
-    color: #b8b078;
 }
 
 a {
@@ -137,34 +134,42 @@ a {
     align-items: flex-end;
     gap: 20px;
     position: absolute;
-    right: -40px; /* Place les logos en dehors de la carte */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+    right: -30px; /* Place les logos en dehors de la carte */
+    top: 3%;    
+    z-index: 1; /* Les logos sont derrière la carte par défaut */
+    
+    transition-duration: 500ms;
 }
+
+
+
+
 
 .tech {
     text-align: center;
     position: relative;
+    overflow: hidden; /* Masquer la moitié de l'image */
 }
 
 .tech-img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     transition: transform 0.3s, opacity 0.3s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    
+    opacity: 50%;
+    /* Effet de masque */
+    mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 }
 
-.card:hover .tech-img {
-    opacity: 1; /* Affiche le logo au survol */
-    transform: translateX(0); /* Fait entrer le logo dans la carte */
+.tech:hover .tech-img {
+    mask-image: none; /* Affiche complètement l'image au survol */
+    opacity: 1;
 }
 
-.tech-img:hover {
-    transform: scale(1.2); /* Agrandit le logo au survol */
-}
+
 
 .txt {
     color: whitesmoke;
@@ -191,11 +196,10 @@ a {
 .carousel img {
     width: 50px; /* Taille uniforme pour tous les logos */
     height: 50px; /* Assure que la hauteur est aussi uniforme */
-    opacity: 0.2; /* Opacité de 20% */
+    opacity: 0.4; /* Opacité de 40% */
     margin: 0 70px; /* Espace entre les logos (augmente à 50px) */
     transition: opacity 0.5s;
 }
-
 
 .carousel img:hover {
     opacity: 1; /* Augmente l'opacité au survol */
@@ -203,7 +207,6 @@ a {
 
 /* Animation pour faire défiler les logos de droite à gauche */
 @keyframes scroll-left {
-
     0% {
         transform: translateX(0%);
     }
@@ -212,3 +215,7 @@ a {
     }
 }
 
+.links {
+    position: relative;
+    z-index: 1;
+}
