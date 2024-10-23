@@ -78,6 +78,7 @@ body {
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
     transition: transform 0.3s;
+    background-color: rgb(15, 121, 121);
 }
 
 .avatar img:hover {
@@ -183,5 +184,5 @@ a {
 
 .avatar img:hover {
     transform: scale(1.1);
-    background-color: #ffffff;
+    background-color: #849496;
 }
