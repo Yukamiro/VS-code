@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(
+        -45deg,
+        #b4a1f0,
+        #020e64,
+        #34116a,
+        #030444,
+        #351677,
+        #456786,
+        #ffffff
+    );
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: linear-gradient(
+        -45deg,
+        #b4a1f0,
+        #020e64,
+        #34116a,
+        #030444,
+        #351677,
+        #456786,
+        #ffffff
+    );
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    margin-top: 50px;
+    
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(214, 209, 209, 0.5);
+    text-align: left;
+    
+}
+
+.avatar {
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(33, 33, 33, 0.3);
+    transition: transform 0.3s;
+    opacity: 50%;
+}
+
+.avatar img:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.title-3d {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #b8b078;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    transition: transform 0.5s;
+}
+
+p { text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: whitesmoke;
+}
+
+.age {
+    color: #b8b078;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-3d {
+    padding: 15px 30px;
+    background-color: #b8b078;
+    color: #121212;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.btn-3d:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Section des logos en 3D */
+.logos_network {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    position: absolute;
+    right: -40px; /* Place les logos en dehors de la carte */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.tech {
+    text-align: center;
+    position: relative;
+}
+
+.tech-img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s, opacity 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    
+}
+
+.card:hover .tech-img {
+    opacity: 1; /* Affiche le logo au survol */
+    transform: translateX(0); /* Fait entrer le logo dans la carte */
+}
+
+.tech-img:hover {
+    transform: scale(1.2); /* Agrandit le logo au survol */
+}
+
+.txt {
+    color: whitesmoke;
+}
+
+/* Carrousel en bas de page */
+.carousel {
+    width: 100%; /* Prend toute la largeur de la page */
+    overflow: hidden; /* Cache les logos qui sortent de l'écran */
+    position: absolute;
+    bottom: 0; /* Place le carrousel en bas de la page */
+    left: 0;
+   
+    padding: 10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    animation: scroll-left 15s linear infinite; /* Animation pour faire défiler */
+}
+
+.carousel img {
+    width: 50px; /* Taille uniforme pour tous les logos */
+    height: 50px; /* Assure que la hauteur est aussi uniforme */
+    opacity: 0.2; /* Opacité de 20% */
+    margin: 0 70px; /* Espace entre les logos (augmente à 50px) */
+    transition: opacity 0.5s;
+}
+
+
+.carousel img:hover {
+    opacity: 1; /* Augmente l'opacité au survol */
+}
+
+/* Animation pour faire défiler les logos de droite à gauche */
+@keyframes scroll-left {
+
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-97.5%);
+    }
+}
+
