@@ -1,0 +1,66 @@
+a{
+    text-decoration: none;
+}
+
+.main_content{
+    display: flex;
+    flex-direction: column;
+    padding: 100px 3%;
+
+}
+
+.avatar_title{
+    display: flex;
+    text-align: center;
+    font-size: 160px;
+    justify-content: center;
+    margin-bottom: 150px ;
+}
+
+.avatar_listitems{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    
+}
+
+.avatar_listitems img {
+    width: 100%; /* makes images responsive */
+    height: auto; /* maintains aspect ratio */
+}
+
+.students_details {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 24px ;
+    background-color: #1b222e;
+   }
+
+.avatar_apprenant{
+    backdrop-filter: blur(10px);
+    border-radius: 15px; /* Rounded edges */
+    border: 2px solid black; /* Black border, 2px wide */
+}
+
+.avatar_apprenant:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 .6rem rgb(0, 0, 0));
+}
+.toverflow {
+    overflow: hidden ;
+}
+.avatar_apprenant img {
+    transition: 700ms;
+}
+
+body{
+    /* background-image: url("avatars projet collectif/malevolent-red-shrine-wallpaper.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
