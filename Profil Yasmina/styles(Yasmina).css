@@ -5,8 +5,8 @@
 }
 
 canvas{ display: block;
-     vertical-align: bottom; 
 } 
+
 #particles-js{ position:absolute; width: 100%; 
     height: 100%; 
     background-image: url("https://wallpapers.com/images/hd/disseminated-stars-in-the-galaxy-background-6j6bliaq1agycjsr.jpg"); 
