@@ -46,7 +46,8 @@ body {
 }
 
 .card {
-    background: #b7b8a0;
+    background: #8f49af;
+    background: #9c52be;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(214, 209, 209, 0.5);
     display: flex;
