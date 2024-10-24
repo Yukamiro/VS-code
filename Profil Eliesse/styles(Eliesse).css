@@ -4,17 +4,11 @@
     box-sizing: border-box;
 }
 
-canvas{ display: block;
-     vertical-align: bottom; 
-} 
-#particles-js{ position:absolute; width: 100%; 
-    height: 100%; 
-    background-image: url("https://img.freepik.com/free-photo/abstract-empty-smooth-light-pink-studio-room-background-use-as-montage-product-display-banner-template_1258-55827.jpg?t=st=1729599032~exp=1729602632~hmac=9ae8ac512b251acc68c07cf875f2600745c14c5a3396fe52fb4284fb2668912f&w=826"); 
-    background-size: cover; 
-    background-position: 200%; 
-    position:fixed;
-    z-index: 1;
+canvas {
+    display: block;
+
 }
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -27,9 +21,11 @@ body {
     0% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-100px) rotate(180deg);
     }
+
     100% {
         transform: translateY(0) rotate(360deg);
     }
@@ -46,9 +42,9 @@ body {
 }
 
 .card {
-    background: #b7b8a0;
+    background: #043664be;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(214, 209, 209, 0.5);
+    box-shadow: 0 10px 30px rgba(214, 209, 209, 0.34);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,12 +59,14 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
 }
+
 .retour {
     padding-left: 3%;
     width: 100%;
     display: flex;
     justify-content: left;
 }
+
 .avatar {
     margin-bottom: 20px;
 }
@@ -92,12 +90,14 @@ body {
 
 .text {
     padding-left: 3%;
+    color: #ffffff;
 }
+
 .title-3d {
     font-size: 36px;
     margin-bottom: 10px;
-    color: #b8b078;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.901);
     transition: transform 0.5s;
 }
 
@@ -107,6 +107,7 @@ p {
     font-size: 18px;
     margin-bottom: 15px;
     line-height: 1.6;
+    color: #ffffff;
 }
 
 a {
@@ -136,7 +137,7 @@ a {
 
 .skills-3d h2 {
     font-size: 28px;
-    color: #b8b078;
+    color: #ffffff;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     margin-bottom: 20px;
 }
@@ -184,4 +185,17 @@ a {
 .avatar img:hover {
     transform: scale(1.1);
     background-color: #ffffff;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #043564;
+    background-image: url("http://vincentgarreau.com/particles.js/assets/img/kbLd9vb_new.gif");
+    background-repeat: space;
+    background-size: 30%;
+    background-position: 100%;
+    overflow-x: hidden;
+    position: fixed;
 }
