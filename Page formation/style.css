@@ -1,16 +1,31 @@
+@font-face {
+    font-family: 'Whitney';
+    src: url('whitney-bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0%;
     padding: 0%;
 }
 
 .body {
+    font-family: 'Whitney', sans-serif;
     background-image: url(Photos/Fond_JPG.jpg);
     background-size: cover;
     background-repeat: space;
     background-position: center;
     background-attachment: fixed;
-    overflow-x: hidden;
+    overflow: hidden;
 }
+
+header{
+    font-family: 'Whitney', sans-serif;
+    height: 100px;
+    
+}
+
 
 .bigduo {
     width: 100%;

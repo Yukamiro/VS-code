@@ -1,0 +1,542 @@
+@font-face {
+    font-family: 'Whitney';
+    src: url('whitney-bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+body {
+    font-family: 'Whitney', sans-serif;
+    background: linear-gradient(135deg, #333333, #666666, #999999, #cccccc);
+}
+
+
+/* ---- particles.js container ---- */
+#particles-js {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #08075a;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow-y: hidden;
+}
+
+
+/* HEADER */
+header{
+    height: 100px;
+}
+
+.contain-header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    width: 100%;
+}
+
+.contain-header .logoHB {
+    display: flex;
+    align-items: center;
+}
+
+.contain-header ul {
+    float: right;
+    list-style: none;
+    display: flex;
+    float: right;
+    padding: 5px;
+    margin-bottom: 0;
+    margin-left: auto;
+    font-size: 20px;
+}
+
+.contain-header ul li {
+    position: relative; /* Ajouté pour permettre la position absolue de l'élément ::after */
+}
+
+.contain-header ul li a {
+    border-image-width: 35px;
+    display: flex;
+    color: rgba(255, 255, 255, 0.993);
+    padding: 20px;
+    margin: 0px 40px;
+    text-decoration: none;
+    position: relative; /* Ajouté pour permettre l'animation de bordure */
+    overflow: hidden;    /* Empêche la bordure de déborder de l'élément */
+}
+
+.contain-header ul li a::after {
+    content: "";                /* Crée un élément vide */
+    position: absolute;          /* Position absolue pour placer la bordure sous le lien */
+    width: 0%;                   /* Largeur initiale de la bordure (invisible) */
+    height: 3px;                 /* Épaisseur de la bordure */
+    bottom: 0;                   /* Place la bordure en bas de l'élément */
+    left: 0;                     /* Aligne la bordure à gauche */
+    background-color: #f8f8f8;    /* Couleur de la bordure */
+    transition: width 0.4s ease-in-out; /* Transition pour animer la largeur de la bordure */
+}
+
+.contain-header ul li a:hover::after {
+    width: 100%; /* La bordure prend toute la largeur au survol */
+}
+
+.active::after {
+    width: 100%; /* La bordure est toujours visible pour l'élément actif */
+}
+
+.contain-header ul li a img {
+    text-align: center;
+    display: flex;
+}
+
+
+
+
+
+/* BANNER */
+
+.background-image-1 {
+    background-image: url('ressources/Fond_JPG.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.background-image-1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 50, 0.3); /* La couleur et l'opacité de l'overlay */
+}
+
+.banner {
+    position: relative;
+    height: 100vh;
+}
+
+.banner .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 50, 0.7);
+}
+
+.content {
+    z-index: 2; /* Pour que le contenu reste au-dessus de l'overlay */
+    opacity: 1; 
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .we-title,
+.have-title,
+.idea-title {
+    font-size: 140px;
+    font-weight: bold;
+}
+
+
+.display-bottom {
+    z-index: 10; /* Pour que le contenu reste au-dessus de l'overlay */
+    opacity: 1; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: rgba(160, 77, 255, 0.075);
+    text-align: right;
+}
+
+.display-bottom .btn {
+    margin-right: 70px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #08075a;
+    color: white;
+    text-decoration: none;
+    font-size: 48px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.display-bottom .btn:hover {
+    background-color: rgb(89, 89, 143);
+}
+
+.section-with-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 50, 0.7); /* Overlay sur l'image de fond */
+    z-index: 1;
+}
+
+
+
+/* DESCRIPTION HUMAN BOOSTER*/
+
+.block_description {
+    position: relative; /* Nécessaire pour que le contenu soit au-dessus de l'overlay */
+    z-index: 2; /* Pour que le contenu reste au-dessus de l'overlay */
+    opacity: 1; /* Assurer que le contenu soit pleinement visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 780px;
+    width: 100%;
+}
+
+.block_description a {
+    text-decoration: none;
+    overflow-y: hidden;
+}
+
+
+.titre
+{
+    line-height: 0.7;
+    width: 62%;
+    border-top: solid;
+    border-left: solid;
+    border-color: white;
+    padding-left: 15px;
+    padding-top: 15px;
+    transition: border-color 0.5s ease-in-out; /* Transition pour animer les bordures */
+}
+
+.message_bienvenue
+{
+    width: 47.5em;
+    padding: 15px;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: white;
+    transition: border-color 0.5s ease-in-out; /* Transition pour animer les bordures */
+}
+
+.description_1:hover .titre {
+    border-color: #08075a; /* Changement de la couleur de la bordure au hover */
+}
+
+.description_1:hover .message_bienvenue {
+    border-color: #08075a; /* Changement de la couleur de la bordure au hover */
+}
+
+h2
+{
+    font-family: "Quicksand", sans-serif;
+    font-size: 5.5em;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 12px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.texte_message_bienvenue
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    text-align: justify;
+    color: rgb(251, 251, 251);
+}
+
+
+.description
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.description_1
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 600px;
+    margin-left: 70px;
+    transition: transform 0.5s ease-in-out;
+    overflow-y: hidden;
+}
+
+.description_1 .titre h2{
+    overflow-y: hidden;
+}
+
+.description_1:hover {
+    transform: scale(1.05); /* Grossit le contenu de 5% au survol */
+}
+
+
+.description_2
+{
+    overflow-y: hidden;
+    width: 35%;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(61, 59, 59);
+    margin-right: 70px;
+}
+
+.description_2 img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.block_description:after, .block_description:before {
+    border-radius: 5px;
+    border-top: 8px solid #faf9fa;
+    content: "";
+    width: 40%;
+}
+
+.block_description
+{
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    height: 780px;
+    width: 100%;
+}
+
+
+/*Bendeau animé*/
+
+.imagebandeau
+{
+   width: 7em;
+   height: 7em;
+    margin: 15px;
+}
+
+.bandeau
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*Liste carte*/
+
+/*TITRE LISTE CARTE */
+.title-workers {
+    font-size: 48px; /* Set the font size */
+    font-weight: 700; /* Make the font bold */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 5px; /* Increase space between letters */
+    color: #ffffff; /* White text */
+    text-align: center; /* Center the text */
+    background: linear-gradient(90deg, #613a66, #5e5e5e); /* Gradient background */
+    padding: 20px; /* Add padding around the title */
+    border-bottom: 6px solid #0d0e0f; /* Add a bottom border */
+    margin-bottom: 50px; /* Space below the title */
+}
+
+
+/*LISTE CARTE */
+.list{
+    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: 50px;
+}
+
+
+/* Card Styling */
+.list-item {
+    background-color: #1e1e1e; /* Dark background for the cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+/* Hover Effect */
+.list-item:hover {
+    transform: translateY(-10px); /* Lifts card on hover */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7); /* Darker shadow on hover */
+}
+
+
+.list .list-item a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent (in this case, your card styling) */
+}
+
+
+.image{
+    overflow: hidden;
+}
+
+.image img {
+    display: flex;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: scale(1);
+    transition: 0.5s;
+}
+.image:hover img {
+    transform: scale(1.3); /* agrandit l'image de 10% */
+    filter: drop-shadow(0 0 .6rem rgba(255, 255, 255, 0.589));
+}
+
+
+.detail{
+    font-size: 25px;
+    padding: 45px;
+    background-color: #333;
+    text-align: center; /* Center text inside the card */
+    border-top: none;
+    color: rgb(255, 255, 255);
+}
+
+/*Footer*/
+/* Style général du footer */
+footer {
+    color: #000000;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-block {
+    width: 30%;
+    text-align: center;
+  }
+
+  .footer-block h3 {
+    color: #0333ff;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .footer-block p, .footer-block ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .footer-block ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-block ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-block a {
+    color: #f7f3f3;
+    text-decoration: none;
+  }
+
+  .footer-block a:hover {
+    text-decoration: underline;
+  }
+
+  /* Style des icônes */
+  .footer-block i {
+    margin-right: 10px;
+  }
+
+  /* Style des logos sociaux */
+  .social-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-logo:hover {
+    transform: scale(1.1);
+  }
+
+  /* Footer responsive */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-block {
+      width: 100%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .footer-block h3 {
+      text-align: center;
+    }
+
+    .footer-block p, .footer-block ul {
+      text-align: center;
+    }
+  }
+  footer {
+    background: #1a1919;
+    color: white;
+    padding: 40px 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  footer p {
+    margin-bottom: 0px;
+  }
+
+/*Bloc Copy Rights */
+.fin{
+    display: block;
+    -webkit-text-fill-color: #f7f3f3;
+    align-items: center;
+    text-align: center;
+    margin-inline-end: auto;
+    background-color: rgb(0, 0, 0);
+ }
